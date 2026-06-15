@@ -57,6 +57,16 @@ ul { list-style: none; }
 /* selection */
 ::selection { background: var(--volt); color: #000; }
 
+/* global cell grid across the whole site */
+body::before {
+  content: ""; position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255,255,255,.028) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.028) 1px, transparent 1px);
+  background-size: 66px 66px;
+}
+.nav, .promobar, main, .footer { position: relative; z-index: 1; }
+
 /* ---------- Buttons ---------- */
 .btn {
   display: inline-flex; align-items: center; justify-content: center; gap: 8px;
@@ -217,9 +227,9 @@ body:hover .cursor-glow { opacity: 1; }
 .hero__rating b { color: var(--ink); }
 
 .hero__title {
-  font-family: var(--font-display); font-weight: 700;
-  font-size: clamp(46px, 9.2vw, 132px); line-height: 0.92; letter-spacing: -0.045em;
-  margin-bottom: clamp(28px, 4vw, 46px);
+  font-family: var(--font-display); font-weight: 500;
+  font-size: clamp(40px, 7vw, 94px); line-height: 1.0; letter-spacing: -0.035em;
+  margin-bottom: clamp(26px, 4vw, 42px);
 }
 .hero__title .line { display: block; overflow: hidden; padding-block: 0.04em; }
 .hero__title .line > span { display: block; transform: translateY(115%); transition: transform 1s var(--ease); }
@@ -227,8 +237,7 @@ body:hover .cursor-glow { opacity: 1; }
 .hero.is-in .line:nth-child(2) > span { transition-delay: .16s; transform: none; }
 .hero.is-in .line:nth-child(3) > span { transition-delay: .27s; transform: none; }
 .hero__title .accentword {
-  font-style: normal; position: relative; color: var(--volt);
-  text-shadow: 0 0 40px rgba(204,255,0,.45);
+  font-style: normal; font-weight: 600; position: relative; color: var(--volt);
 }
 
 .hero__bottom { display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; flex-wrap: wrap;
@@ -238,45 +247,18 @@ body:hover .cursor-glow { opacity: 1; }
 .hero__sub { color: var(--muted); font-size: clamp(16px, 1.7vw, 19px); max-width: 460px; }
 .hero__cta { display: flex; gap: 14px; flex-wrap: wrap; }
 
-/* bento strip */
-.hero__bento {
-  display: grid; grid-template-columns: 1.6fr 1fr 1fr 1.4fr; gap: 14px;
-  opacity: 0; transform: translateY(28px);
-  transition: opacity .9s var(--ease) .65s, transform .9s var(--ease) .65s;
+/* hero slim stats */
+.hero__stats {
+  display: flex; gap: clamp(26px, 5vw, 64px); flex-wrap: wrap;
+  opacity: 0; transform: translateY(18px);
+  transition: opacity .8s var(--ease) .62s, transform .8s var(--ease) .62s;
 }
-.hero.is-in .hero__bento { opacity: 1; transform: none; }
-.bento {
-  position: relative; border: 1px solid var(--line); border-radius: var(--radius);
-  background: var(--surface); padding: 22px; min-height: 150px; overflow: hidden;
-  transition: border-color .3s, transform .2s var(--ease);
-}
-.bento--stat { display: flex; flex-direction: column; justify-content: flex-end; }
-.bento--stat strong { font-family: var(--font-display); font-weight: 700; font-size: clamp(30px, 4vw, 46px); line-height: 1; letter-spacing: -0.03em; }
-.bento--stat span { font-size: 13px; color: var(--muted); margin-top: 6px; }
-.bento--stat:hover { border-color: var(--volt); }
+.hero.is-in .hero__stats { opacity: 1; transform: none; }
+.hstat b { font-family: var(--font-display); font-weight: 600; font-size: clamp(26px, 3.4vw, 38px); display: block; line-height: 1; letter-spacing: -0.025em; }
+.hstat span { font-size: 13px; color: var(--muted-2); }
 
-.bento--photo {
-  grid-row: span 1;
-  background-image: linear-gradient(150deg, rgba(204,255,0,.28), rgba(10,10,11,.55) 55%), var(--img);
-  background-size: cover; background-position: center; background-color: var(--surface-2);
-  filter: grayscale(.15) contrast(1.05); display: flex; flex-direction: column; justify-content: space-between;
-}
-.bento--photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(transparent 40%, rgba(8,8,10,.7)); }
-.bento__live { position: relative; z-index: 1; display: inline-flex; align-items: center; gap: 9px; align-self: flex-start;
-  font-family: var(--font-display); font-weight: 600; font-size: 13px; color: #0a0a0b;
-  background: var(--volt); padding: 8px 14px; border-radius: 100px; }
-.bento__corner { position: relative; z-index: 1; font-family: var(--font-display); font-size: 13px; color: var(--ink); align-self: flex-start; }
-
-.bento--next { display: flex; flex-direction: column; }
+/* eyebrow label (reused by schedule featured card) */
 .bento__label { font-family: var(--font-display); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--volt); }
-.bento--next strong { font-family: var(--font-display); font-weight: 700; font-size: clamp(20px, 2.2vw, 26px); line-height: 1.05; letter-spacing: -0.02em; margin: 8px 0; }
-.bento__meta { font-size: 12.5px; color: var(--muted); margin-bottom: auto; }
-.bento__cta { font-family: var(--font-display); font-weight: 600; font-size: 13px; color: var(--ink); margin-top: 12px; transition: color .2s; }
-.bento__cta:hover { color: var(--volt); }
-.bento--next:hover { border-color: var(--volt); }
-
-.pulse { width: 11px; height: 11px; border-radius: 50%; background: #0a0a0b; box-shadow: 0 0 0 0 rgba(10,10,11,.5); animation: pulse 1.8s infinite; flex-shrink: 0; }
-@keyframes pulse { 70% { box-shadow: 0 0 0 10px rgba(10,10,11,0); } 100% { box-shadow: 0 0 0 0 rgba(10,10,11,0); } }
 
 /* scroll hint */
 .hero__scroll {
@@ -344,6 +326,16 @@ body:hover .cursor-glow { opacity: 1; }
 }
 .daytab:hover { color: var(--ink); border-color: var(--line-2); }
 .daytab.is-active { background: var(--volt); color: #0a0a0b; border-color: var(--volt); }
+
+.schedule__featured {
+  display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+  background: linear-gradient(120deg, rgba(204,255,0,.1), var(--surface) 62%);
+  border: 1px solid var(--volt); border-radius: var(--radius);
+  padding: 22px 26px; margin-bottom: 26px;
+}
+.schedule__featured-info { display: flex; flex-direction: column; gap: 5px; }
+.schedule__featured-info strong { font-family: var(--font-display); font-weight: 600; font-size: clamp(19px, 2.4vw, 24px); letter-spacing: -0.01em; }
+.schedule__featured-meta { font-size: 13.5px; color: var(--muted); }
 
 .schedule__list { display: grid; gap: 12px; }
 .slot {

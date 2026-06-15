@@ -164,6 +164,9 @@
   });
   renderSchedule("mon");
 
+  const featuredBook = $("#featuredBook");
+  if (featuredBook) featuredBook.addEventListener("click", () => toast("✓ Вы записаны: HIIT Burn в 18:00"));
+
   /* ============================================================
      PRICING toggle (month / year)
      ============================================================ */
