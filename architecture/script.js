@@ -159,18 +159,23 @@
       rooms: ["Кухня-гостиная", "3 спальни", "Гардероб", "Гараж", "Котельная", "2 санузла"],
     },
     p3: {
-      name: "«Грань 184»", tag: "Двухэтажный дом для большой семьи. Показан 1-й этаж.",
+      name: "«Грань 184»", tag: "Двухэтажный дом для большой семьи. Переключайте этажи кнопками выше.",
       stats: [["Площадь", "184 м²"], ["Этажи", "2"], ["Спальни", "4"], ["Габарит", "11 × 11 м"]],
-      rooms: ["Гостиная-столовая", "Кухня", "Гостевая", "Холл с лестницей", "Тамбур", "Санузел"],
+      rooms: ["Гостиная-столовая", "Кухня", "Гостевая", "3 спальни", "Гардероб", "2 санузла"],
     },
   };
   const planTabs = $$("#planTabs .ptab"), planSvgs = $$(".planSvg"), legend = $("#planLegend");
+  const floorSw = $("#floorSw");
+  let p3floor = "p3";
+
   function showPlan(id) {
     planTabs.forEach((t) => {
       const on = t.dataset.plan === id;
       t.classList.toggle("is-active", on); t.setAttribute("aria-selected", String(on));
     });
-    planSvgs.forEach((s) => s.classList.toggle("is-active", s.id === id));
+    const svgId = id === "p3" ? p3floor : id;
+    planSvgs.forEach((s) => s.classList.toggle("is-active", s.id === svgId));
+    if (floorSw) floorSw.hidden = id !== "p3";
     const d = planData[id];
     legend.innerHTML =
       '<div class="pl-name">' + d.name + '</div>' +
@@ -178,6 +183,15 @@
       d.stats.map((s) => '<div class="pl-stat"><span>' + s[0] + '</span><b>' + s[1] + '</b></div>').join("") +
       '<div class="pl-rooms">' + d.rooms.map((r) => '<span class="pl-room">' + r + '</span>').join("") + '</div>';
   }
+
+  if (floorSw) {
+    $$(".floor-btn", floorSw).forEach((btn) => btn.addEventListener("click", () => {
+      p3floor = btn.dataset.floor;
+      $$(".floor-btn", floorSw).forEach((b) => b.classList.toggle("is-active", b === btn));
+      planSvgs.forEach((s) => s.classList.toggle("is-active", s.id === p3floor));
+    }));
+  }
+
   planTabs.forEach((t) => t.addEventListener("click", () => showPlan(t.dataset.plan)));
   showPlan("p1");
 
