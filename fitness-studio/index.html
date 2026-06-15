@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#0a0a0a" />
+<title>VOLT — премиальная фитнес-студия</title>
+<meta name="description" content="VOLT — фитнес-студия нового поколения. Тренеры мирового уровня, умное расписание, безлимит и персональные программы. Первая тренировка — бесплатно." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ============ PROMO BAR ============ -->
+<div class="promobar" id="promobar">
+  <div class="promobar__track">
+    <span>⚡ Первая тренировка — бесплатно для новичков</span>
+    <span>•</span>
+    <span>−40% на первый месяц безлимита</span>
+    <span>•</span>
+    <span>Приведи друга — получи 2 недели в подарок</span>
+    <span>•</span>
+    <span>⚡ Первая тренировка — бесплатно для новичков</span>
+    <span>•</span>
+    <span>−40% на первый месяц безлимита</span>
+    <span>•</span>
+    <span>Приведи друга — получи 2 недели в подарок</span>
+    <span>•</span>
+  </div>
+</div>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="container nav__inner">
+    <a href="#hero" class="brand" aria-label="VOLT — на главную">
+      <span class="brand__mark">⚡</span>
+      <span class="brand__name">VOLT</span>
+    </a>
+    <nav class="nav__links" aria-label="Главное меню">
+      <a href="#studio">Студия</a>
+      <a href="#trainers">Тренеры</a>
+      <a href="#schedule">Расписание</a>
+      <a href="#pricing">Тарифы</a>
+    </nav>
+    <div class="nav__actions">
+      <button class="btn btn--ghost" id="openCabinet">Личный кабинет</button>
+      <a href="#trial" class="btn btn--solid">Пробная тренировка</a>
+      <button class="burger" id="burger" aria-label="Меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile menu -->
+<div class="mobilemenu" id="mobilemenu" aria-hidden="true">
+  <a href="#studio">Студия</a>
+  <a href="#trainers">Тренеры</a>
+  <a href="#schedule">Расписание</a>
+  <a href="#pricing">Тарифы</a>
+  <button class="btn btn--ghost" id="openCabinetMobile">Личный кабинет</button>
+  <a href="#trial" class="btn btn--solid">Пробная тренировка</a>
+</div>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="hero">
+  <div class="container hero__inner">
+    <div class="hero__copy">
+      <div class="hero__badge reveal">
+        <span class="dot"></span> Студия открыта · 06:00 — 00:00 без выходных
+      </div>
+      <h1 class="hero__title reveal">
+        Твоё тело —<br />
+        <span class="accentword">главный проект</span><br />
+        этого года.
+      </h1>
+      <p class="hero__sub reveal">
+        VOLT — фитнес-студия нового поколения. Умное расписание, тренеры мирового
+        уровня и персональные программы, которые реально работают. Без абонементов
+        в стол и без переплат.
+      </p>
+      <div class="hero__cta reveal">
+        <a href="#trial" class="btn btn--solid btn--lg">Записаться бесплатно</a>
+        <a href="#pricing" class="btn btn--outline btn--lg">Смотреть тарифы</a>
+      </div>
+      <div class="hero__stats reveal">
+        <div class="hstat">
+          <strong data-count="4200" data-suffix="+">0</strong>
+          <span>активных клиентов</span>
+        </div>
+        <div class="hstat">
+          <strong data-count="32" data-suffix="">0</strong>
+          <span>тренеров-экспертов</span>
+        </div>
+        <div class="hstat">
+          <strong data-count="180" data-suffix="+">0</strong>
+          <span>занятий в неделю</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero__visual reveal">
+      <div class="hero__img" style="--img:url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=900&q=80&auto=format&fit=crop')"></div>
+      <div class="hero__card hero__card--rating">
+        <div class="stars">★★★★★</div>
+        <strong>4.9 / 5.0</strong>
+        <span>2 800+ отзывов</span>
+      </div>
+      <div class="hero__card hero__card--live">
+        <span class="pulse"></span>
+        <div>
+          <strong>Сейчас в зале</strong>
+          <span>87 человек тренируются</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span>STRENGTH</span><i>✳</i><span>HIIT</span><i>✳</i><span>YOGA</span><i>✳</i><span>BOXING</span><i>✳</i><span>CYCLE</span><i>✳</i><span>STRETCH</span><i>✳</i><span>PILATES</span><i>✳</i><span>FUNCTIONAL</span><i>✳</i>
+    <span>STRENGTH</span><i>✳</i><span>HIIT</span><i>✳</i><span>YOGA</span><i>✳</i><span>BOXING</span><i>✳</i><span>CYCLE</span><i>✳</i><span>STRETCH</span><i>✳</i><span>PILATES</span><i>✳</i><span>FUNCTIONAL</span><i>✳</i>
+  </div>
+</div>
+
+<!-- ============ STUDIO / WHY ============ -->
+<section class="studio section" id="studio">
+  <div class="container">
+    <div class="section__head">
+      <span class="eyebrow reveal">Почему VOLT</span>
+      <h2 class="section__title reveal">Не спортзал. <br/>Система, которая ведёт к результату.</h2>
+    </div>
+    <div class="features">
+      <article class="feature reveal">
+        <div class="feature__num">01</div>
+        <h3>Умное расписание</h3>
+        <p>Бронируй место за 10 секунд. Система сама подберёт удобное время и напомнит о тренировке.</p>
+      </article>
+      <article class="feature reveal">
+        <div class="feature__num">02</div>
+        <h3>Тренеры-эксперты</h3>
+        <p>Мастера спорта, нутрициологи и реабилитологи. Каждый прошёл отбор 1 из 40.</p>
+      </article>
+      <article class="feature reveal">
+        <div class="feature__num">03</div>
+        <h3>Персональный план</h3>
+        <p>Программа под твою цель — будь то −10 кг, первая подтяжка или марафон. И корректировка каждые 2 недели.</p>
+      </article>
+      <article class="feature reveal">
+        <div class="feature__num">04</div>
+        <h3>Оборудование 2030</h3>
+        <p>Technogym, умные трекеры нагрузки и восстановления, зона сауны и крио.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRAINERS ============ -->
+<section class="trainers section" id="trainers">
+  <div class="container">
+    <div class="section__head section__head--row">
+      <div>
+        <span class="eyebrow reveal">Команда</span>
+        <h2 class="section__title reveal">Тренеры, за которыми<br/>идут результаты.</h2>
+      </div>
+      <p class="section__lead reveal">Каждый тренер — это не «инструктор», а твой персональный архитектор формы. Выбери своего на пробной тренировке.</p>
+    </div>
+    <div class="trainers__grid">
+      <article class="tcard reveal" style="--ph:url('https://images.unsplash.com/photo-1594381898411-846e7d193883?w=700&q=80&auto=format&fit=crop')">
+        <div class="tcard__img"></div>
+        <div class="tcard__body">
+          <div class="tcard__top"><h3>Артём Соколов</h3><span class="tag">Strength</span></div>
+          <p>МСМК по пауэрлифтингу. 9 лет опыта. Специализация — сила и набор массы.</p>
+        </div>
+      </article>
+      <article class="tcard reveal" style="--ph:url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=700&q=80&auto=format&fit=crop')">
+        <div class="tcard__img"></div>
+        <div class="tcard__body">
+          <div class="tcard__top"><h3>Мария Дронова</h3><span class="tag">HIIT · Cardio</span></div>
+          <p>Нутрициолог + тренер. Помогла 600+ клиентам прийти в форму без диет-срывов.</p>
+        </div>
+      </article>
+      <article class="tcard reveal" style="--ph:url('https://images.unsplash.com/photo-1567013127542-490d757e51fc?w=700&q=80&auto=format&fit=crop')">
+        <div class="tcard__img"></div>
+        <div class="tcard__body">
+          <div class="tcard__top"><h3>Дэн Кравцов</h3><span class="tag">Boxing</span></div>
+          <p>КМС по боксу. Ставит технику и взрывную мощь. Любимец тех, кто хочет драйва.</p>
+        </div>
+      </article>
+      <article class="tcard reveal" style="--ph:url('https://images.unsplash.com/photo-1518611012118-696072aa579a?w=700&q=80&auto=format&fit=crop')">
+        <div class="tcard__img"></div>
+        <div class="tcard__body">
+          <div class="tcard__top"><h3>Алина Верес</h3><span class="tag">Yoga · Stretch</span></div>
+          <p>Реабилитолог. Вернёт подвижность, снимет зажимы и научит чувствовать тело.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SCHEDULE ============ -->
+<section class="schedule section" id="schedule">
+  <div class="container">
+    <div class="section__head">
+      <span class="eyebrow reveal">Расписание</span>
+      <h2 class="section__title reveal">Выбери день — забронируй место.</h2>
+    </div>
+
+    <div class="schedule__tabs reveal" id="dayTabs" role="tablist">
+      <button class="daytab is-active" data-day="mon">Пн</button>
+      <button class="daytab" data-day="tue">Вт</button>
+      <button class="daytab" data-day="wed">Ср</button>
+      <button class="daytab" data-day="thu">Чт</button>
+      <button class="daytab" data-day="fri">Пт</button>
+      <button class="daytab" data-day="sat">Сб</button>
+      <button class="daytab" data-day="sun">Вс</button>
+    </div>
+
+    <div class="schedule__list reveal" id="scheduleList">
+      <!-- injected by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section class="pricing section" id="pricing">
+  <div class="container">
+    <div class="section__head">
+      <span class="eyebrow reveal">Тарифы</span>
+      <h2 class="section__title reveal">Прозрачно. Без скрытых платежей.</h2>
+      <div class="billing-toggle reveal">
+        <span class="is-active" id="labMonth">Помесячно</span>
+        <button class="switch" id="billingSwitch" aria-label="Переключить период оплаты"><span></span></button>
+        <span id="labYear">За год <em>−20%</em></span>
+      </div>
+    </div>
+
+    <div class="plans">
+      <article class="plan reveal">
+        <div class="plan__head">
+          <h3>Старт</h3>
+          <p>Для тех, кто пробует ритм студии.</p>
+        </div>
+        <div class="plan__price"><b class="amount" data-m="2900" data-y="2320">2 900</b> <span>₽ / мес</span></div>
+        <ul class="plan__list">
+          <li>8 групповых тренировок</li>
+          <li>Доступ в зал 06:00–16:00</li>
+          <li>Приложение и трекер</li>
+          <li>Заморозка на 7 дней</li>
+        </ul>
+        <button class="btn btn--outline btn--block plan__buy" data-plan="Старт" data-amount-m="2900" data-amount-y="2320">Оформить</button>
+      </article>
+
+      <article class="plan plan--popular reveal">
+        <div class="plan__flag">Хит выбора</div>
+        <div class="plan__head">
+          <h3>Безлимит</h3>
+          <p>Тренируйся когда и сколько хочешь.</p>
+        </div>
+        <div class="plan__price"><b class="amount" data-m="5400" data-y="4320">5 400</b> <span>₽ / мес</span></div>
+        <ul class="plan__list">
+          <li>Безлимит групповых + зал 24/7</li>
+          <li>2 персональные тренировки / мес</li>
+          <li>Сауна, крио и зона восстановления</li>
+          <li>Персональный план питания</li>
+          <li>Заморозка на 30 дней</li>
+        </ul>
+        <button class="btn btn--solid btn--block plan__buy" data-plan="Безлимит" data-amount-m="5400" data-amount-y="4320">Оформить</button>
+      </article>
+
+      <article class="plan reveal">
+        <div class="plan__head">
+          <h3>Premium PT</h3>
+          <p>Максимум — тренер ведёт лично.</p>
+        </div>
+        <div class="plan__price"><b class="amount" data-m="12900" data-y="10320">12 900</b> <span>₽ / мес</span></div>
+        <ul class="plan__list">
+          <li>Всё из «Безлимит»</li>
+          <li>12 персональных тренировок / мес</li>
+          <li>Контроль нутрициолога</li>
+          <li>Замеры и InBody каждые 2 недели</li>
+          <li>Приоритетная бронь мест</li>
+        </ul>
+        <button class="btn btn--outline btn--block plan__buy" data-plan="Premium PT" data-amount-m="12900" data-amount-y="10320">Оформить</button>
+      </article>
+    </div>
+    <p class="pricing__note reveal">Все тарифы можно оплатить онлайн в пару кликов. Первая тренировка — всегда бесплатно.</p>
+  </div>
+</section>
+
+<!-- ============ PROMO / NEWCOMERS ============ -->
+<section class="promo section">
+  <div class="container">
+    <div class="promo__box reveal">
+      <div class="promo__glow"></div>
+      <div class="promo__content">
+        <span class="eyebrow eyebrow--light">Только для новичков</span>
+        <h2>Первый месяц безлимита<br/><span class="accentword">со скидкой 40%</span></h2>
+        <p>Приходи на бесплатную тренировку, влюбись в студию и забери первый месяц за <b>3 240 ₽</b> вместо 5 400 ₽. Предложение действует 7 дней после первого визита.</p>
+        <a href="#trial" class="btn btn--solid btn--lg">Забрать предложение</a>
+      </div>
+      <div class="promo__big">−40<span>%</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRIAL FORM ============ -->
+<section class="trial section" id="trial">
+  <div class="container trial__inner">
+    <div class="trial__copy reveal">
+      <span class="eyebrow">Пробная тренировка</span>
+      <h2 class="section__title">Запишись за 30 секунд.<br/>Это бесплатно.</h2>
+      <p>Оставь заявку — администратор перезвонит, подберёт тренера под твою цель и согласует удобное время. Никакого спама и навязывания.</p>
+      <ul class="trial__perks">
+        <li>✓ Знакомство со студией и тренером</li>
+        <li>✓ Замер состава тела (InBody)</li>
+        <li>✓ Персональная рекомендация по плану</li>
+      </ul>
+    </div>
+
+    <form class="trial__form reveal" id="trialForm" novalidate>
+      <h3>Заявка на пробную</h3>
+
+      <div class="field">
+        <label for="name">Как вас зовут?</label>
+        <input type="text" id="name" name="name" placeholder="Имя" autocomplete="name" />
+        <span class="error" data-for="name"></span>
+      </div>
+
+      <div class="field">
+        <label for="phone">Телефон</label>
+        <input type="tel" id="phone" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" inputmode="tel" />
+        <span class="error" data-for="phone"></span>
+      </div>
+
+      <div class="field">
+        <label for="goal">Ваша цель</label>
+        <select id="goal" name="goal">
+          <option value="">Выберите цель</option>
+          <option>Похудеть</option>
+          <option>Набрать мышечную массу</option>
+          <option>Поддерживать форму</option>
+          <option>Реабилитация / здоровье спины</option>
+          <option>Подготовка к соревнованиям</option>
+        </select>
+        <span class="error" data-for="goal"></span>
+      </div>
+
+      <div class="field">
+        <label for="time">Удобное время</label>
+        <select id="time" name="time">
+          <option value="">Когда вам удобно?</option>
+          <option>Утро (06:00–11:00)</option>
+          <option>День (11:00–17:00)</option>
+          <option>Вечер (17:00–23:00)</option>
+        </select>
+        <span class="error" data-for="time"></span>
+      </div>
+
+      <label class="checkbox">
+        <input type="checkbox" id="agree" name="agree" />
+        <span>Согласен на обработку персональных данных</span>
+        <span class="error error--check" data-for="agree"></span>
+      </label>
+
+      <button type="submit" class="btn btn--solid btn--block btn--lg">Записаться бесплатно</button>
+      <p class="trial__form-note">Нажимая кнопку, вы соглашаетесь с условиями студии.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="reviews section">
+  <div class="container">
+    <div class="section__head">
+      <span class="eyebrow reveal">Отзывы</span>
+      <h2 class="section__title reveal">Им VOLT уже изменил форму.</h2>
+    </div>
+    <div class="reviews__grid">
+      <figure class="review reveal">
+        <div class="stars">★★★★★</div>
+        <blockquote>«За 4 месяца минус 12 кг и впервые подтянулась. Тренер реально ведёт, а не просто считает повторения.»</blockquote>
+        <figcaption>— Ольга, 31 год</figcaption>
+      </figure>
+      <figure class="review reveal">
+        <div class="stars">★★★★★</div>
+        <blockquote>«Расписание и бронь через приложение — топ. Прихожу, место всегда моё, не жду тренажёры.»</blockquote>
+        <figcaption>— Игорь, 27 лет</figcaption>
+      </figure>
+      <figure class="review reveal">
+        <div class="stars">★★★★★</div>
+        <blockquote>«Думал зал — это скучно. В VOLT драйв, как в клубе. Хожу 5 раз в неделю и кайфую.»</blockquote>
+        <figcaption>— Никита, 24 года</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="finalcta section">
+  <div class="container">
+    <div class="finalcta__box reveal">
+      <h2>Лучший день начать — сегодня.</h2>
+      <p>Первая тренировка бесплатно. Просто приходи.</p>
+      <a href="#trial" class="btn btn--solid btn--lg">Записаться в VOLT</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <a href="#hero" class="brand"><span class="brand__mark">⚡</span><span class="brand__name">VOLT</span></a>
+      <p>Фитнес-студия нового поколения. Москва, ул. Энергетиков, 12.</p>
+    </div>
+    <div class="footer__col">
+      <h4>Студия</h4>
+      <a href="#trainers">Тренеры</a>
+      <a href="#schedule">Расписание</a>
+      <a href="#pricing">Тарифы</a>
+    </div>
+    <div class="footer__col">
+      <h4>Контакты</h4>
+      <a href="tel:+74950000000">+7 (495) 000-00-00</a>
+      <a href="mailto:hello@volt.studio">hello@volt.studio</a>
+      <span>06:00 — 00:00, ежедневно</span>
+    </div>
+    <div class="footer__col">
+      <h4>Соцсети</h4>
+      <a href="#">Telegram</a>
+      <a href="#">Instagram</a>
+      <a href="#">YouTube</a>
+    </div>
+  </div>
+  <div class="container footer__bottom">
+    <span>© 2030 VOLT Studio. Все права защищены.</span>
+    <span>Дизайн портфолио · сделано с ⚡</span>
+  </div>
+</footer>
+
+<!-- ============ PAYMENT MODAL ============ -->
+<div class="modal" id="paymentModal" aria-hidden="true">
+  <div class="modal__overlay" data-close></div>
+  <div class="modal__box modal__box--pay" role="dialog" aria-modal="true" aria-labelledby="payTitle">
+    <button class="modal__close" data-close aria-label="Закрыть">✕</button>
+    <div class="pay">
+      <div class="pay__left">
+        <span class="eyebrow">Оформление</span>
+        <h3 id="payTitle">Тариф «<span id="paySummaryPlan">Безлимит</span>»</h3>
+        <div class="pay__total">
+          <span>К оплате</span>
+          <strong><span id="paySummaryAmount">5 400</span> ₽</strong>
+        </div>
+        <p class="pay__period" id="paySummaryPeriod">Списание раз в месяц. Отмена в любой момент.</p>
+        <ul class="pay__benefits">
+          <li>🔒 Безопасная оплата</li>
+          <li>↺ Возврат в течение 14 дней</li>
+          <li>⚡ Доступ открывается сразу</li>
+        </ul>
+      </div>
+      <form class="pay__right" id="payForm" novalidate>
+        <div class="field">
+          <label for="cardNumber">Номер карты</label>
+          <input type="text" id="cardNumber" inputmode="numeric" placeholder="0000 0000 0000 0000" maxlength="19" />
+          <span class="error" data-for="cardNumber"></span>
+        </div>
+        <div class="pay__row">
+          <div class="field">
+            <label for="cardExp">Срок</label>
+            <input type="text" id="cardExp" inputmode="numeric" placeholder="ММ/ГГ" maxlength="5" />
+            <span class="error" data-for="cardExp"></span>
+          </div>
+          <div class="field">
+            <label for="cardCvc">CVC</label>
+            <input type="text" id="cardCvc" inputmode="numeric" placeholder="•••" maxlength="3" />
+            <span class="error" data-for="cardCvc"></span>
+          </div>
+        </div>
+        <div class="field">
+          <label for="cardName">Имя на карте</label>
+          <input type="text" id="cardName" placeholder="IVAN IVANOV" />
+          <span class="error" data-for="cardName"></span>
+        </div>
+        <button type="submit" class="btn btn--solid btn--block btn--lg" id="payBtn">Оплатить <span id="payBtnAmount">5 400</span> ₽</button>
+      </form>
+    </div>
+    <div class="pay__success" id="paySuccess" hidden>
+      <div class="success__check">✓</div>
+      <h3>Оплата прошла успешно!</h3>
+      <p>Доступ к тарифу активирован. Мы отправили чек на вашу почту. Добро пожаловать в VOLT ⚡</p>
+      <button class="btn btn--solid" data-close>Отлично</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ CABINET MODAL ============ -->
+<div class="modal" id="cabinetModal" aria-hidden="true">
+  <div class="modal__overlay" data-close></div>
+  <div class="modal__box modal__box--cabinet" role="dialog" aria-modal="true" aria-labelledby="cabTitle">
+    <button class="modal__close" data-close aria-label="Закрыть">✕</button>
+    <div class="cabinet">
+      <aside class="cabinet__side">
+        <div class="cabinet__user">
+          <div class="avatar">АК</div>
+          <div>
+            <strong>Алексей К.</strong>
+            <span>ID 0042 · Безлимит</span>
+          </div>
+        </div>
+        <nav class="cabinet__nav">
+          <button class="is-active">Обзор</button>
+          <button>Мои занятия</button>
+          <button>Абонемент</button>
+          <button>Платежи</button>
+          <button>Настройки</button>
+        </nav>
+        <div class="cabinet__status">
+          <span>Абонемент активен</span>
+          <strong>осталось 18 дней</strong>
+          <div class="bar"><i style="width:60%"></i></div>
+        </div>
+      </aside>
+      <div class="cabinet__main">
+        <header class="cabinet__head" id="cabTitle">
+          <div>
+            <h3>Привет, Алексей ⚡</h3>
+            <p>Ты на 🔥 серии из 12 тренировок. Так держать!</p>
+          </div>
+        </header>
+
+        <div class="cabinet__cards">
+          <div class="ccard">
+            <span>Тренировок в этом месяце</span>
+            <strong>14</strong>
+            <em class="up">+3 к прошлому</em>
+          </div>
+          <div class="ccard">
+            <span>Сожжено ккал</span>
+            <strong>8 420</strong>
+            <em class="up">+12%</em>
+          </div>
+          <div class="ccard">
+            <span>Текущий вес</span>
+            <strong>78.4 кг</strong>
+            <em class="down">−4.1 кг</em>
+          </div>
+        </div>
+
+        <div class="cabinet__upcoming">
+          <h4>Ближайшие занятия</h4>
+          <div class="upitem">
+            <div class="upitem__time"><strong>18:00</strong><span>Сегодня</span></div>
+            <div class="upitem__info"><strong>HIIT Burn</strong><span>с Марией Дроновой · зал 2</span></div>
+            <span class="badge badge--booked">Забронировано</span>
+          </div>
+          <div class="upitem">
+            <div class="upitem__time"><strong>09:30</strong><span>Завтра</span></div>
+            <div class="upitem__info"><strong>Strength Base</strong><span>с Артёмом Соколовым · зал 1</span></div>
+            <span class="badge badge--booked">Забронировано</span>
+          </div>
+          <div class="upitem">
+            <div class="upitem__time"><strong>20:00</strong><span>Чт</span></div>
+            <div class="upitem__info"><strong>Boxing</strong><span>с Дэном Кравцовым · ринг</span></div>
+            <button class="badge badge--book">Записаться</button>
+          </div>
+        </div>
+
+        <div class="cabinet__goal">
+          <div>
+            <h4>Цель: −8 кг к лету</h4>
+            <span>Осталось 3.9 кг — ты почти у цели 💪</span>
+          </div>
+          <div class="ring" style="--p:67">
+            <span>67%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ TOAST ============ -->
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="script.js"></script>
+</body>
+</html>

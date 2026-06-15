@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "skills": {
+    "design-taste-frontend": {
+      "source": "leonxlnx/taste-skill",
+      "sourceType": "github",
+      "skillPath": "skills/taste-skill/SKILL.md",
+      "computedHash": "899b84384f74f540ea5284d9b2e9234e050998b42eacc805410b518d4226c0b3"
+    },
+    "taste-skill": {
+      "source": "cowork-os/cowork-os",
+      "sourceType": "github",
+      "skillPath": "resources/skills/taste-skill/SKILL.md",
+      "computedHash": "3290ade6b120734860d8bd48ca1390163e1ccc884c953e56f7140bf26a5d4c89"
+    }
+  }
+}

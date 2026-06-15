@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Портфолио · Лендинги</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#0a0a0b; --surface:#15151a; --line:rgba(255,255,255,.09);
+    --line2:rgba(255,255,255,.16); --ink:#f4f4f2; --muted:#9a9aa3;
+    --accent:#ccff00; --font-d:"Space Grotesk",sans-serif; --font-b:"Inter",sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--ink);font-family:var(--font-b);line-height:1.6;
+    min-height:100vh;-webkit-font-smoothing:antialiased}
+  ::selection{background:var(--accent);color:#000}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1100px;margin:0 auto;padding:clamp(40px,8vw,90px) clamp(20px,5vw,40px)}
+  header{margin-bottom:60px}
+  .kicker{font-family:var(--font-d);font-weight:600;font-size:13px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--accent);margin-bottom:18px;display:flex;align-items:center;gap:8px}
+  .kicker .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);
+    box-shadow:0 0 0 4px rgba(204,255,0,.18)}
+  h1{font-family:var(--font-d);font-weight:700;font-size:clamp(34px,6vw,64px);
+    line-height:1.02;letter-spacing:-.03em;margin-bottom:18px}
+  h1 span{color:var(--accent)}
+  .lead{color:var(--muted);font-size:clamp(16px,2vw,19px);max-width:560px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
+  .card{position:relative;background:var(--surface);border:1px solid var(--line);
+    border-radius:20px;overflow:hidden;transition:transform .35s cubic-bezier(.22,1,.36,1),border-color .3s;
+    display:flex;flex-direction:column;min-height:280px}
+  .card:hover{transform:translateY(-8px);border-color:var(--accent)}
+  .card.soon{opacity:.5;pointer-events:none}
+  .card__top{flex:1;padding:26px;display:flex;flex-direction:column;justify-content:space-between}
+  .card__num{font-family:var(--font-d);font-weight:700;font-size:13px;color:var(--accent)}
+  .card__title{font-family:var(--font-d);font-weight:600;font-size:24px;letter-spacing:-.01em;margin-top:40px}
+  .card__desc{color:var(--muted);font-size:14px;margin-top:8px}
+  .card__bar{padding:16px 26px;border-top:1px solid var(--line);display:flex;
+    justify-content:space-between;align-items:center;font-family:var(--font-d);font-size:14px}
+  .card__bar .go{color:var(--accent)}
+  .chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:14px}
+  .chip{font-family:var(--font-d);font-size:11px;color:var(--muted);border:1px solid var(--line2);
+    padding:3px 9px;border-radius:100px}
+  .count{margin:30px 0 22px;color:var(--muted);font-size:14px;font-family:var(--font-d)}
+  footer{margin-top:70px;color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:24px}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="kicker"><span class="dot"></span> Портфолио · Frontend / Landing Design</div>
+      <h1>Коллекция лендингов<br/><span>разных стилей.</span></h1>
+      <p class="lead">Серия из 15 концептуальных лендингов — разные индустрии, палитры и визуальные языки. Каждый собран как готовый к продакшену фронтенд.</p>
+    </header>
+
+    <div class="count">01 / 15 готово</div>
+
+    <div class="grid">
+      <a class="card" href="fitness-studio/index.html">
+        <div class="card__top">
+          <div class="card__num">№ 15 · FITNESS</div>
+          <div>
+            <div class="card__title">VOLT Studio</div>
+            <div class="card__desc">Премиальная фитнес-студия: расписание, тренеры, тарифы, онлайн-оплата и личный кабинет.</div>
+            <div class="chips"><span class="chip">Dark</span><span class="chip">Electric Lime</span><span class="chip">Space Grotesk</span></div>
+          </div>
+        </div>
+        <div class="card__bar"><span>Смотреть проект</span><span class="go">→</span></div>
+      </a>
+
+      <div class="card soon">
+        <div class="card__top">
+          <div class="card__num">СКОРО</div>
+          <div>
+            <div class="card__title">Следующий проект</div>
+            <div class="card__desc">Новый стиль и палитра в работе.</div>
+          </div>
+        </div>
+        <div class="card__bar"><span>В разработке</span><span>·</span></div>
+      </div>
+    </div>
+
+    <footer>© 2030 · Landing portfolio · сделано с ⚡</footer>
+  </div>
+</body>
+</html>
