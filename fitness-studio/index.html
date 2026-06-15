@@ -13,6 +13,11 @@
 </head>
 <body>
 
+<!-- ============ GLOBAL FX OVERLAYS ============ -->
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+
 <!-- ============ PROMO BAR ============ -->
 <div class="promobar" id="promobar">
   <div class="promobar__track">
@@ -68,56 +73,69 @@
 
 <!-- ============ HERO ============ -->
 <section class="hero" id="hero">
+  <!-- animated aurora background -->
+  <div class="aurora" aria-hidden="true">
+    <span class="aurora__blob a1"></span>
+    <span class="aurora__blob a2"></span>
+    <span class="aurora__blob a3"></span>
+    <span class="aurora__grid"></span>
+  </div>
+
   <div class="container hero__inner">
-    <div class="hero__copy">
-      <div class="hero__badge reveal">
-        <span class="dot"></span> Студия открыта · 06:00 — 00:00 без выходных
+    <div class="hero__top">
+      <div class="hero__badge">
+        <span class="dot"></span> Студия открыта · 06:00 — 00:00
       </div>
-      <h1 class="hero__title reveal">
-        Твоё тело —<br />
-        <span class="accentword">главный проект</span><br />
-        этого года.
-      </h1>
-      <p class="hero__sub reveal">
-        VOLT — фитнес-студия нового поколения. Умное расписание, тренеры мирового
-        уровня и персональные программы, которые реально работают. Без абонементов
-        в стол и без переплат.
-      </p>
-      <div class="hero__cta reveal">
-        <a href="#trial" class="btn btn--solid btn--lg">Записаться бесплатно</a>
-        <a href="#pricing" class="btn btn--outline btn--lg">Смотреть тарифы</a>
-      </div>
-      <div class="hero__stats reveal">
-        <div class="hstat">
-          <strong data-count="4200" data-suffix="+">0</strong>
-          <span>активных клиентов</span>
-        </div>
-        <div class="hstat">
-          <strong data-count="32" data-suffix="">0</strong>
-          <span>тренеров-экспертов</span>
-        </div>
-        <div class="hstat">
-          <strong data-count="180" data-suffix="+">0</strong>
-          <span>занятий в неделю</span>
-        </div>
+      <div class="hero__rating">
+        <span class="stars">★★★★★</span>
+        <span><b>4.9</b> &middot; 2&nbsp;800+ отзывов</span>
       </div>
     </div>
-    <div class="hero__visual reveal">
-      <div class="hero__img" style="--img:url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=900&q=80&auto=format&fit=crop')"></div>
-      <div class="hero__card hero__card--rating">
-        <div class="stars">★★★★★</div>
-        <strong>4.9 / 5.0</strong>
-        <span>2 800+ отзывов</span>
+
+    <h1 class="hero__title">
+      <span class="line"><span>Стань сильнее</span></span>
+      <span class="line"><span>версией <i class="accentword">себя</i> —</span></span>
+      <span class="line"><span>начни сегодня.</span></span>
+    </h1>
+
+    <div class="hero__bottom">
+      <p class="hero__sub">
+        VOLT — фитнес-студия нового поколения. Умное расписание, тренеры мирового
+        уровня и персональные программы, которые реально работают.
+      </p>
+      <div class="hero__cta">
+        <a href="#trial" class="btn btn--solid btn--lg magnetic">Записаться бесплатно</a>
+        <a href="#pricing" class="btn btn--glass btn--lg magnetic">Смотреть тарифы →</a>
       </div>
-      <div class="hero__card hero__card--live">
-        <span class="pulse"></span>
-        <div>
-          <strong>Сейчас в зале</strong>
-          <span>87 человек тренируются</span>
-        </div>
+    </div>
+
+    <!-- bento strip -->
+    <div class="hero__bento">
+      <div class="bento bento--photo" style="--img:url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=900&q=80&auto=format&fit=crop')">
+        <div class="bento__live"><span class="pulse"></span> 87 человек в зале сейчас</div>
+        <span class="bento__corner">Студия · 1 200 м²</span>
+      </div>
+      <div class="bento bento--stat tilt">
+        <strong data-count="4200" data-suffix="+">0</strong>
+        <span>активных клиентов</span>
+      </div>
+      <div class="bento bento--stat tilt">
+        <strong data-count="32" data-suffix="">0</strong>
+        <span>тренеров-экспертов</span>
+      </div>
+      <div class="bento bento--next tilt">
+        <span class="bento__label">Ближайшее занятие</span>
+        <strong>HIIT Burn<br/>18:00</strong>
+        <span class="bento__meta">Мария Дронова · осталось 2 места</span>
+        <a href="#schedule" class="bento__cta">Всё расписание →</a>
       </div>
     </div>
   </div>
+
+  <a href="#studio" class="hero__scroll" aria-label="Листать вниз">
+    <span>Листай</span>
+    <i></i>
+  </a>
 </section>
 
 <!-- ============ MARQUEE ============ -->

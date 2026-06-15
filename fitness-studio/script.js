@@ -420,5 +420,89 @@
     }, 1200);
   });
 
-  /* ---------- year in footer (kept 2030 brand) ---------- */
+  /* ============================================================
+     HERO reveal (kinetic title)
+     ============================================================ */
+  const hero = $("#hero");
+  if (hero) {
+    // reveal as soon as layout settles; setTimeout fallback fires even in
+    // background tabs where requestAnimationFrame is throttled/paused.
+    requestAnimationFrame(() => hero.classList.add("is-in"));
+    setTimeout(() => hero.classList.add("is-in"), 140);
+  }
+
+  /* ============================================================
+     Modern FX (skip on touch / reduced-motion)
+     ============================================================ */
+  const fine = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---------- Scroll progress bar ---------- */
+  const progress = $("#scrollProgress");
+  if (progress) {
+    const updateProgress = () => {
+      const h = document.documentElement;
+      const max = h.scrollHeight - h.clientHeight;
+      progress.style.transform = `scaleX(${max > 0 ? h.scrollTop / max : 0})`;
+    };
+    updateProgress();
+    window.addEventListener("scroll", updateProgress, { passive: true });
+  }
+
+  if (fine && !reduce) {
+    /* ---------- Cursor glow (lerp follow, idle-aware) ---------- */
+    const glow = $("#cursorGlow");
+    if (glow) {
+      let gx = window.innerWidth / 2, gy = window.innerHeight / 2, tx = gx, ty = gy, running = false;
+      function loop() {
+        gx += (tx - gx) * 0.14; gy += (ty - gy) * 0.14;
+        glow.style.transform = `translate(${gx}px, ${gy}px) translate(-50%, -50%)`;
+        if (Math.abs(tx - gx) > 0.5 || Math.abs(ty - gy) > 0.5) {
+          requestAnimationFrame(loop);
+        } else { running = false; }
+      }
+      window.addEventListener("mousemove", (e) => {
+        tx = e.clientX; ty = e.clientY;
+        if (!running) { running = true; requestAnimationFrame(loop); }
+      }, { passive: true });
+    }
+
+    /* ---------- Magnetic buttons ---------- */
+    $$(".magnetic").forEach((el) => {
+      const strength = 0.35;
+      el.addEventListener("mousemove", (e) => {
+        const r = el.getBoundingClientRect();
+        const mx = e.clientX - (r.left + r.width / 2);
+        const my = e.clientY - (r.top + r.height / 2);
+        el.style.transform = `translate(${mx * strength}px, ${my * strength}px)`;
+      });
+      el.addEventListener("mouseleave", () => { el.style.transform = ""; });
+    });
+
+    /* ---------- 3D tilt cards ---------- */
+    $$(".tilt").forEach((el) => {
+      const max = 8;
+      el.addEventListener("mousemove", (e) => {
+        const r = el.getBoundingClientRect();
+        const px = (e.clientX - r.left) / r.width - 0.5;
+        const py = (e.clientY - r.top) / r.height - 0.5;
+        el.style.transform = `perspective(800px) rotateX(${-py * max}deg) rotateY(${px * max}deg) translateZ(6px)`;
+      });
+      el.addEventListener("mouseleave", () => { el.style.transform = ""; });
+    });
+
+    /* ---------- Aurora parallax (cursor + scroll) ---------- */
+    const blobs = $$(".aurora__blob");
+    if (blobs.length) {
+      let mx = 0, my = 0;
+      window.addEventListener("mousemove", (e) => {
+        mx = (e.clientX / window.innerWidth - 0.5) * 2;
+        my = (e.clientY / window.innerHeight - 0.5) * 2;
+        blobs.forEach((b, i) => {
+          const d = (i + 1) * 16;
+          b.style.translate = `${mx * d}px ${my * d}px`;
+        });
+      }, { passive: true });
+    }
+  }
 })();
